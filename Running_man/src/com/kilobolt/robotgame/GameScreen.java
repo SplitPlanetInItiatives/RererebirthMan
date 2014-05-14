@@ -93,35 +93,18 @@ public class GameScreen extends Screen {
 
 	private void loadMap() {
 		ArrayList lines = new ArrayList();
-		int width = 0;
-		int height = 0;
+		int width = 1000;
+		int height = 50;
 
-		Scanner scanner = new Scanner(SampleGame.map);
-		while (scanner.hasNextLine()) {
-			String line = scanner.nextLine();
-
-			// no more lines to read
-			if (line == null) {
-				break;
-			}
-
-			if (!line.startsWith("!")) {
-				lines.add(line);
-				width = Math.max(width, line.length());
-
-			}
-		}
-		height = lines.size();
-
-		for (int j = 0; j < 12; j++) {
-			String line = (String) lines.get(j);
+		for (int j = 0; j < height; j++) {
 			for (int i = 0; i < width; i++) {
 
-				if (i < line.length()) {
-					char ch = line.charAt(i);
-					Tile t = new Tile(i, j, Character.getNumericValue(ch));
+					int randomInt = (int)  Math.round((Math.random()* 10));
+					/*set all floor leaves*/
+					if (i < 30 && j == 12) { Tile t = new Tile(i, j, randomInt);}
+					Tile t = new Tile(i, j, randomInt);
 					tilearray.add(t);
-				}
+				
 
 			}
 		}
