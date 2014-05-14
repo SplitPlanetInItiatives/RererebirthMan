@@ -95,6 +95,10 @@ public class GameScreen extends Screen {
 		ArrayList lines = new ArrayList();
 		int width = 1000;
 		int height = 50;
+		
+		// awdheusi
+		
+		int jakeBaby;
 
 		for (int j = 0; j < height; j++) {
 			for (int i = 0; i < width; i++) {
