@@ -10,6 +10,8 @@ public class Animation {
 	// hfusu 
 	// asfji
 	
+	private int test1862367126;
+	
 	private ArrayList frames;
 	private int currentFrame;
 	private long animTime;
