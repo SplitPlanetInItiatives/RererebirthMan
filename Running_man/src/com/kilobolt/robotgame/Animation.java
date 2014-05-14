@@ -7,6 +7,9 @@ import com.kilobolt.framework.Image;
 
 public class Animation {
 
+	// hfusu 
+	// asfji
+	
 	private ArrayList frames;
 	private int currentFrame;
 	private long animTime;
