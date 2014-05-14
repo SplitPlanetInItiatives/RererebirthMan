@@ -7,6 +7,8 @@ import com.kilobolt.framework.Image;
 
 public class Animation {
 
+	// hfusu 
+	
 	private ArrayList frames;
 	private int currentFrame;
 	private long animTime;
