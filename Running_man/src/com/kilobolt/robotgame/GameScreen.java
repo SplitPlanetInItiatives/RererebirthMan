@@ -100,7 +100,7 @@ public class GameScreen extends Screen {
 			for (int i = 0; i < width; i++) {
 
 					int randomInt = (int)  Math.round((Math.random()* 10));
-					/*set all floor leves*/
+					/*set all floor leaves*/
 					if (i < 30 && j == 12) { Tile t = new Tile(i, j, randomInt);}
 					Tile t = new Tile(i, j, randomInt);
 					tilearray.add(t);
