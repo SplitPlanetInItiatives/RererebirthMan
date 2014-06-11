@@ -94,26 +94,62 @@ public class GameScreen extends Screen {
 	private void loadMap() {
 		ArrayList lines = new ArrayList();
 		int width = 1000;
-		int height = 50;
+		int height = 12;
+		int [] tmp = {8,5,2,4,6};
+		int [] tmp2 = {-2,2};
 		
 		// awdheusi
 		
-		int jakeBaby;
-
-		for (int j = 0; j < height; j++) {
-			for (int i = 0; i < width; i++) {
-
-					int randomInt = (int)  Math.round((Math.random()* 10));
-					/*set all floor leaves*/
-					if (i < 30 && j == 12) { Tile t = new Tile(i, j, randomInt);}
-					Tile t = new Tile(i, j, randomInt);
-					tilearray.add(t);
+		int platformheight  = 11, randomintPF = 0;
+		
+		
+		
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
 				
+				if ( i%10 == 0 && i>1 && j == 0 ) {
+					
+					//randomintPF = (int) ((Math.round(Math.random() ) + 2) * ( Math.round(Math.random() * 2) - 1))   ;
+					//platformheight = platformheight + randomintPF;
+					
+					platformheight = platformheight + tmp2[(int) Math.round((Math.random() ))];
+					
+				  	if ( platformheight > height ) { platformheight = height -1 ;
+				  } else if ( platformheight <  5) { platformheight = 5; }
+					
+				}
 
+				int randomInt = (int)  Math.round((   Math.random()* 1000)) % 5;
+				int randomInt2 = tmp[randomInt];
+				
+				if (j == platformheight) {
+					Tile t = new Tile(i, j, randomInt2);
+					tilearray.add(t);
+				}
+				
+				
 			}
 		}
-
+         
+//			for ( j = 0; j < height; j++) {
+//				for ( i = 0; i < width * ii; i++) {
+//						
+//					if (j%11 ==0 ) {
+//						int randomInt = (int)  Math.round((   Math.random()* 1000)) % 5;
+//						int randomInt2 = tmp[randomInt];
+//						//int randomInt2 = 8;
+//						/*set all floor leaves*/
+//						if (i < 30 && j == 11) { Tile t = new Tile(i, j, randomInt2);}
+//						Tile t = new Tile(i, j, randomInt2);
+//						tilearray.add(t);
+//					}
+//	
+//				}
+//						
+//			}
 	}
+
+	
 
 	@Override
 	public void update(float deltaTime) {
